@@ -1,0 +1,11 @@
+version: '3'
+services:
+  newfrontend:
+    build: ./newfrontend
+    ports:
+      - '3000:3000'
+  api:
+    build: ./api
+    ports:
+      - '5051:5051'
+
