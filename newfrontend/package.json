@@ -6,7 +6,9 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^4.5.3",
     "react": "^17.0.2",
+    "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.4"
@@ -15,13 +17,19 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint \"**/*.{js,jsx}\"",
+    "lint--fix": "eslint \"**/*.{js,jsx}\" --fix"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:prettier/recommended"
     ]
+  },
+  "prettier": {
+    "singleQuote": true
   },
   "browserslist": {
     "production": [
@@ -34,5 +42,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1"
   }
 }
