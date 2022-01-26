@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from flask_cors import CORS
 from flask_cors import cross_origin
 
+
 load_dotenv(dotenv_path="./.env.local")
 
 UNSPLASH_URL = "https://api.unsplash.com/photos/random"
