@@ -55,8 +55,10 @@ const App = () => {
   };
   const handleDelete = async (id) => {
     try {
-      const res = await axios.delete(`${API_URL}/images?image_id=${id}`);
-      setImages(images.map((image) => image.id != id));
+      const res = await axios.delete(`${API_URL}/images/${id}`);
+      if (res.data?.deleted_id) {
+        setImages(images.filter((image) => image.id != id));
+      }
     } catch (error) {
       console.log(error);
     }
