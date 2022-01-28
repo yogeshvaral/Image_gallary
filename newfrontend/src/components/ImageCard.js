@@ -1,6 +1,8 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button, NavLink } from 'react-bootstrap';
 const ImageCard = ({ image, deleteImage, saveImage }) => {
+  const authorPortfolioURL = image.user?.portfolio_url;
+  const authorName = image.user?.name || 'No Author Name';
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src={image.urls.small} />
@@ -16,6 +18,14 @@ const ImageCard = ({ image, deleteImage, saveImage }) => {
           </Button>
         )}
       </Card.Body>
+      <Card.Footer className="text-center">
+        {authorPortfolioURL && (
+          <NavLink href={authorPortfolioURL} target="_blank">
+            {authorName}
+          </NavLink>
+        )}
+        {!authorPortfolioURL && authorName}
+      </Card.Footer>
     </Card>
   );
 };
